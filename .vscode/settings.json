@@ -1,0 +1,10 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "*.ejs": "html",
+        "stack": "cpp",
+        "vector": "cpp",
+        "iosfwd": "cpp"
+    },
+    "git.ignoreLimitWarning": true
+}
