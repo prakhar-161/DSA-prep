@@ -4,9 +4,11 @@ using namespace std;
 class Solution {
     public:
     // V is the no. of nodes
+
+    // 0 based indexing graph
     vector<int> bfs(int V, vector<int> adj[]) {
         int vis[V] = {0};
-        vis[0] = 1;
+        vis[0] = 1;             // started from 0
         queue<int> q;
         q.push(0);
         vector<int> bfs;
