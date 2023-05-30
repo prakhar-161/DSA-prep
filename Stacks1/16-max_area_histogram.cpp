@@ -39,11 +39,11 @@ class Solution {
             if(s.empty()) {
                 right.push_back(pseudoIndex);
             }
-            else if(!s.empty() && s.top().first < heights[i]) {
+            else if(!s.empty() && s.top().first > heights[i]) {
                 right.push_back(s.top().second);
             }
-            else if(!s.empty() && s.top().first >= heights[i]) {
-                while(!s.empty() && s.top().first >= heights[i]) {
+            else if(!s.empty() && s.top().first <= heights[i]) {
+                while(!s.empty() && s.top().first <= heights[i]) {
                     s.pop();
                 }
                 if(s.size() == 0) {

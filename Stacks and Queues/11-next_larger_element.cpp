@@ -18,7 +18,6 @@ class Solution {
                 while(!st.empty() && st.top() <= arr[i]) {
                     st.pop();
                 }
-
                 if(st.empty()) {
                     v.push_back(-1);
                 }
@@ -28,7 +27,6 @@ class Solution {
             }
             st.push(arr[i]);
         }
-
         reverse(v.begin(), v.end());
         return v;
     }
