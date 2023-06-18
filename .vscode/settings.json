@@ -27,7 +27,8 @@
     "ranges": "cpp",
     "stacktrace": "cpp",
     "functional": "cpp",
-    "__tuple": "cpp"
+    "__tuple": "cpp",
+    "filesystem": "cpp"
   },
   "git.ignoreLimitWarning": true
 }
