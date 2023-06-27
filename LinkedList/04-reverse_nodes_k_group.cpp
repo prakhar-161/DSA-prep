@@ -16,6 +16,15 @@ class Node {
 
 
 Node* kReverse(Node *head, int k) {
+    // for the case if there is a group at last with size < k
+    int size = 0;
+    Node* temp = head;
+    while(temp != NULL) {
+        temp = temp -> next;
+        size++;
+    }
+    if(size < k) return head;
+    
     // base case
     if(head == NULL) return NULL;
 
@@ -25,7 +34,7 @@ Node* kReverse(Node *head, int k) {
     Node* forward = NULL;
     int count = 0;
 
-    while(count < k && curr != NULL) {
+    while(curr != NULL && count < k) {
         forward = curr -> next;
         curr -> next = prev;
         prev = curr;

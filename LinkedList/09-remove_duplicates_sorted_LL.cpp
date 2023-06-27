@@ -33,3 +33,35 @@ Node *removeDuplicates(Node *head) {
 
 // TC -> O(N)
 // SC -> O(1)
+
+// Approach - 2
+class Solution {
+public:
+    ListNode* deleteDuplicates(ListNode* head) {
+        if(head == NULL || head->next == NULL) return head;
+
+        ListNode* curr = head;
+        while(curr && curr->next) {
+            if(curr->next->val == curr->val) {
+                curr->next = curr->next->next;
+            }
+            else {
+                curr = curr->next;
+            }
+        }
+        return head;
+    }
+};
+
+// Approach - 3
+ListNode* deleteDuplicates(ListNode* head) {
+    if(head == NULL || head->next == NULL) return head;
+    ListNode* curr = head;
+    while(curr) {
+        while(curr->next && curr->next->val == curr->val) {
+            curr->next = curr->next->next;
+        }    
+        curr = curr->next;
+    }
+    return head;
+}

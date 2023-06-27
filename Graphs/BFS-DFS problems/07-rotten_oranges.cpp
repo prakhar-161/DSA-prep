@@ -26,18 +26,17 @@ public:
             int t = q.front().second;
             time = max(time, t);
             q.pop();
-            
+
             for(int i=0; i<4; i++) {
                 int nrow = row + delrow[i];
                 int ncol = col + delcol[i];
-                
-                if(nrow >= 0 && nrow < m && ncol >= 0 && ncol < n && vis[nrow][ncol] != 2 && grid[nrow][ncol] == 1) {
+                if(nrow >= 0 && nrow < m && ncol >= 0 && ncol < n && vis[nrow][ncol] != 2 && grid[i][j] == 1) {
                     vis[nrow][ncol] = 2;
                     q.push({{nrow, ncol}, t+1});
                 }
             }
         }
-        
+
         for(int i=0; i<m; i++) {
             for(int j=0; j<n; j++) {
                 if(grid[i][j] == 1 && vis[i][j] != 2) {

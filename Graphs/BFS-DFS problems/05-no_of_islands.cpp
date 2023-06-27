@@ -15,16 +15,14 @@ public:
             int col = q.front().second;
             q.pop();
             
-            int delrow[] = {-1, 0, 1, 0};
-            int delcol[] = {0, 1, 0, -1};
-            
-            for(int i=0; i<4; i++) {
-                int nrow = row + delrow[i];
-                int ncol = col + delcol[i];
-                
-                if(nrow >= 0 && nrow < m && ncol >=0 && ncol < n && grid[nrow][ncol] == '1' && vis[nrow][ncol] == 0) {
-                    vis[nrow][ncol] = 1;
-                    q.push({nrow, ncol});
+            for(int delrow = -1, delrow <= 1; delrow++) {
+                for(int delcol = -1, delcol <= 1; delcol++) {
+                    int nrow = row + delrow;
+                    int ncol = col + delcol;
+                    if(nrow >= 0 && nrow < m && ncol >=0 && ncol < n && grid[nrow][ncol] == '1' && vis[nrow][ncol] == 0) {
+                        vis[nrow][ncol] = 1;
+                        q.push({nrow, ncol});
+                    }
                 }
             }
         }

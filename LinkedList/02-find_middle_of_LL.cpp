@@ -37,6 +37,12 @@ Node* findMiddle(Node* head) {
         cnt++;
     }
     return temp;
+
+    // len = 5, LL => 1->2->3->4->5, temp = head => 1
+    // cnt = 0, ans = 2, temp = temp -> next i.e temp = 2
+    // cnt = 1, ans = 2, temp = 3
+    // cnt = 2, ans = 2, stop
+    // return temp i.e. 3
 }
 
 // TC -> O(N) + O(N/2) ~ O(N)

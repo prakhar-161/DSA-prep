@@ -20,6 +20,7 @@ class Node {
 bool isCircularList(Node* head) {
     if(head == NULL) return true;
     
+    // start from the node next to head
     Node* temp = head -> next;
     // traverse for non-circular and circular list
     while(temp != NULL && temp != head) {
