@@ -1,43 +1,47 @@
-#include<bits/stdc++.h>
-using namespace std;
+// Two types of problems of two-sum
+// TYPE-1 : if the pair exist, print yes or no
+// TYPE-2 : if the pair exist, return the indexes of the elements of the pair
 
+// Below is the better solution for both types and optimal for type-2 specifically
+// Using map
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        map<int, int> mpp;
         int n = nums.size();
+        unordered_map<int, int> mpp;
         for(int i=0; i<n; i++) {
-            int num = nums[i];
-            int more = target - num;
-            if(mpp.find(num) != mpp.end()) {
-                return {mpp[more], i};
+            int curr = nums[i];
+            int rem = target - curr;
+            if(mpp.find(rem) != mpp.end()) {
+                return {mpp[rem], i};
+                // return "YES"
             }
-            mpp[num] = i;
+            mpp[curr] = i;
         }
         return {-1, -1};
+        // return "NO"
     }
 };
 
-// Most Optimal for bool
-// int left = 0, right = n-1;
-// sort(nums.begin(), nums.end());
-// while(left >= right) {
-//     int sum = nums[left] + nums[right];
-//     if(sum < target) left++;
-//     else if(sum > target) right--;
-//     else return true;
-// } 
-// return false;
-
-// bool
-// map<int, int> mpp;
-// int n = nums.size();
-// for(int i=0; i<n; i++) {
-//     int ele = nums[i];
-//     int more = target - ele;
-//     if(mpp.find(more) != mpp.end()) {
-//         return true;
-//     }
-//     mpp[ele] = i;
-// }
-// return false;
+// Below is the optimal solution for type-1
+// TWO POINTER APPROACH
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int left = 0, right = nums.size();
+        int sum = 0;
+        while(left < right) {
+            sum += nums[left] + nums[right];
+            if(sum == target) {
+                return "YES";
+            }
+            else if(sum < target) {
+                left++;
+            }
+            else {
+                right--;
+            }
+        }
+        return "NO";
+    }
+};

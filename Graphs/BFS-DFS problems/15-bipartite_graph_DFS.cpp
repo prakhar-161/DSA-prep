@@ -26,7 +26,7 @@ public:
 
         for(int i=0; i<v; i++) {
             if(color[i] == -1) {
-                if(checkDFS(i, V, adj, color) == false) return false;
+                if(checkDFS(i, 0, adj, color) == false) return false;
             }
         }
         return true;
