@@ -2,7 +2,7 @@
 using namespace std;
 
 class Heap {
-    public:
+public:
     int arr[100];
     int size;
 
@@ -32,38 +32,34 @@ class Heap {
     }
 
     // deletion : TC -> O(logN)
+    // deleting the root node
     void deleteFromHeap() {
-        // size is size of array
         if(size == 0) {
-            cout << "No element in the heap already" << endl;
+            cout << "No element in the heap already" << "\n";
             return;
         }
 
-        // step - 1
-        // put last element into first index
+        // step-1 : put last node to first index val
         arr[1] = arr[size];
 
-        // step - 2
-        size--;              // now last node can't be accessed hence deleted
+        // step-2 : remove last node
+        size = size - 1;
 
-        // step - 3
-        // take new root node to its correct position
-        int i = 1;      
+        // step-3 : take the new root node to its correct position
+        int i = 1;
         while(i < size) {
             int leftIndex = 2*i;
             int rightIndex = 2*i+1;
 
-            if(leftIndex < size && arr[i] < arr[leftIndex]) {
+            if(leftIndex <= size && arr[i] < arr[leftIndex]) {
                 swap(arr[i], arr[leftIndex]);
                 i = leftIndex;
-            }
-            else if(rightIndex < size && arr[i] < arr[rightIndex]) {
+            } 
+            else if(rightIndex <= size && arr[i] < arr[rightIndex]) {
                 swap(arr[i], arr[rightIndex]);
                 i = rightIndex;
             }
-            else {
-                return ;
-            }
+            else return;
         }
     }
 
