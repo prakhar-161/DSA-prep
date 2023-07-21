@@ -28,7 +28,8 @@
     "stacktrace": "cpp",
     "functional": "cpp",
     "__tuple": "cpp",
-    "filesystem": "cpp"
+    "filesystem": "cpp",
+    "locale": "cpp"
   },
   "git.ignoreLimitWarning": true
 }
