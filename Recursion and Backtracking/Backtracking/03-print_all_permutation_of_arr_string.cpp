@@ -8,7 +8,7 @@ class Solution {
 public:
     void recurPermute(int ind, vector<int>& nums, vector<vector<int>>& ans) {
         if(ind == nums.size()) {
-            ans.push_back(nums[i]);
+            ans.push_back(nums);
             return;
         }
 

@@ -27,7 +27,7 @@ public:
 // TWO POINTER APPROACH
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
+    string twoSum(vector<int>& nums, int target) {
         int left = 0, right = nums.size();
         int sum = 0;
         while(left < right) {

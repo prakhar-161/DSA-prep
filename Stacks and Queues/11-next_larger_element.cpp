@@ -3,6 +3,7 @@ using namespace std;
 
 // next greater to right
 class Solution {
+    public:
     vector<int> NLE(vector<int> arr) {
         stack<int> st;
         int n = arr.size();
